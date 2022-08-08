@@ -1,105 +1,44 @@
-###### Nama : Akbar noer yanuar 
-###### Kelas : XII RPL1 
-###### No. Absen : 12 
+# modul 4
 
-# Modul 1
+#### Nama  : Akbar noer yanuar
+#### Kelas : XII RPL 1
+#### Absen : 12
 
-## Soal 
-1. Lakukan proses instalasi framework laravel kedalam folder dengan nama masing-masing.
-2. Buatlah projek pertama laravel dengan nama projek “penjualan” dan tampilkan dalam browser.
-```
-composer create-project laravel/laravel penjualan
-```
+1. Buatlah View untuk project anda
+2. Buatlah layout dengan master template blade untuk project and
 
-# Modul 2
+### langkah pertama
+pertama kita buat new file dengan nama seperti berikut.
 
-Soal No.1
-Buatlah migration tabel kategori dengan menggunakan teknik yang telah di pelajari dalam 
-modul ini.
+![image](https://user-images.githubusercontent.com/109929695/183350838-2c606b69-2a64-4d0c-8dcc-378c82534561.png)
 
-### Langkah Pertama
-```
-Masukan code seperti dibawah:
-php artisan migration create_kategori_table
-```
-```
-<?php
+kemudian kita isi seperti dibawah ini.
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+![image](https://user-images.githubusercontent.com/109929695/183350988-64a06686-b9a8-43e0-992f-f3ae1a66de9e.png)
+![image](https://user-images.githubusercontent.com/109929695/183351049-59f5d825-a5bc-42ab-a86b-e9208cfd0457.png)
 
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('kategori', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->timestamps();
-        });
-    }
+### langkah kedua 
+kemudian kita membuat folder barang. dan didalam folder tsb kita membuat file home.blade.php
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('kategori');
-    }
-};
-```
-### Langkah Kedua
-```
-php artisan migrate
-```
+![image](https://user-images.githubusercontent.com/109929695/183351276-d1f02bd1-d089-4156-8f8f-657adcf92267.png)
 
-Soal No.2
-Berikan data dengan menggunakan seeder yang telah anda pelajari pada modul ini
-```
-<?php
+lalu kita masukkan coding seperti berikut.
 
-namespace Database\Seeders;
+![image](https://user-images.githubusercontent.com/109929695/183351404-54fec5cf-38c4-4a5b-9fc0-b6a5fd96fc73.png)
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-use DB;
-class kategoritableseeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        DB::table('Kategori')->insert(array(
-            [
-                'nama'=>'Perlengkapan Sekolah',
-            ],
-            [
-                'nama'=>'Komputer',
-            ],
-            [
-                'nama'=>'Sabun',
-            ],
-            [
-                'nama'=>'Accesories',
-            
-            ],
-            [
-                'nama'=>'ATK',
-            ],
-        ));
-    }
-}
-```
+![image](https://user-images.githubusercontent.com/109929695/183351429-f5cc0d42-8587-4e9b-ad9e-d30f8022d84a.png)
 
-                                     
+### langkah ketiga
+selanjutnya kita membuat folder dan file seperti langkah kedua tetapi berbeda nama dan isinya.
+
+![image](https://user-images.githubusercontent.com/109929695/183351608-6348a45f-3153-4a52-9eda-7ba0ead361c1.png)
+
+![image](https://user-images.githubusercontent.com/109929695/183351658-ec235d3d-1b0e-4d19-a1c2-44ef9a7ed24f.png)
+
+dan hasil yangakan keluar di web seperti berikut.
+
+![image](https://user-images.githubusercontent.com/109929695/183351769-6548ab71-3476-48c1-874d-e65d8f47389a.png)
+
+yang diatas untuk hasil barang dan dibawah ini adalah hasil untuk kategori.
+
+![image](https://user-images.githubusercontent.com/109929695/183351865-84a1e821-46fb-43a1-9ee8-8789c7d538aa.png)
